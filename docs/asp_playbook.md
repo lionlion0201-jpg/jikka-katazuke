@@ -24,4 +24,4 @@
 - 楽天ボタン(lib/rakuten.js)は JP サイトの a_id のため停止中。このサイトをもしもに登録したら差し替えて ENABLE_RAKUTEN=1 にする
 
 ## Amazon.co.jp
-- 当面は JP と同じアカウント(seniorpet-22)を使う。このサイトの URL をアソシエイトのサイト一覧に追加し、専用のトラッキングIDを作ったら scripts/review_config.json の amazon_tag と記事のリンクを差し替える
+- トラッキングID は `jikkakatazuke-22`(2026-11-02 作成。JP と同じアソシエイトアカウントで、サイト一覧に https://jikka-katazuke.net/ を追加済み)
