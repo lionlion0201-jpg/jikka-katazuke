@@ -4,6 +4,7 @@ const path = require("path");
 const crypto = require("crypto");
 const { isPublished, isSlugPublished } = require("./lib/publishing");
 const { addRakutenButtons } = require("./lib/rakuten");
+const { addArticleBlocks } = require("./lib/article-blocks");
 const { resolveCategory, pickRelated } = require("./lib/categories");
 
 module.exports = function (eleventyConfig) {
@@ -91,6 +92,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode("whenPublished", (content, slug) =>
     isSlugPublished(slug) ? content : ""
   );
+
+  // 記事の「結論」の囲みと「依頼する前に確認したいこと」のチェックリスト(lib/article-blocks.js)
+  eleventyConfig.addTransform("article-blocks", function (content, outputPath) {
+    return addArticleBlocks(content, (this.page && this.page.outputPath) || outputPath);
+  });
 
   // Amazon の検索ボタンの隣に楽天市場ボタンを足す(lib/rakuten.js)。
   // lib/rakuten.js の a_id は JP サイト用のため、このサイトをもしもに登録して
