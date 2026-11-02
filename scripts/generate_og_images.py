@@ -42,12 +42,12 @@ WIDTH, HEIGHT = 1200, 630
 
 # --- サイトごとの見た目(src/assets/style.css の CSS 変数に合わせる) -------------
 STYLE = {
-    "bg": "#faf7f2",           # --bg
+    "bg": "#f6f8f6",           # --bg
     "card": "#ffffff",         # --card
-    "border": "#e6ddd2",       # --border
-    "text": "#2b2420",         # --text
-    "accent": "#b5622a",       # --accent
-    "accent_soft": "#f2e2d2",  # --accent-soft
+    "border": "#d9e3dc",       # --border
+    "text": "#22302a",         # --text
+    "accent": "#3f7a5c",       # --accent
+    "accent_soft": "#dcebe2",  # --accent-soft
     "title_font": os.path.join(FONT_DIR, "NotoSansJP-Bold.otf"),
     "title_variation": None,   # 可変フォントの軸の値(使わない場合は None)
     "name_font": os.path.join(FONT_DIR, "NotoSansJP-Bold.otf"),

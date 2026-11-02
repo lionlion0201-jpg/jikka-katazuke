@@ -29,7 +29,9 @@ module.exports = function (eleventyConfig) {
         .update(fs.readFileSync(path.join(ogDir, file)))
         .digest("hex")
         .slice(0, 8);
-      ogImages[slug] = `/assets/og/${file}?v=${hash}`;
+      // テンプレートは url フィルタを通さずに使うので、公開先のパス(PATH_PREFIX)をここで付ける
+      const prefix = (process.env.PATH_PREFIX || "/").replace(/\/$/, "");
+      ogImages[slug] = `${prefix}/assets/og/${file}?v=${hash}`;
       eleventyConfig.addPassthroughCopy({ [`og-images/${file}`]: `assets/og/${file}` });
     }
   }
@@ -114,7 +116,9 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    pathPrefix: "/",
+    // 独自ドメインを取るまでは GitHub Pages の標準アドレス(/jikka-katazuke-note/ の下)で公開する。
+    // deploy.yml で PATH_PREFIX を渡している。独自ドメインに移ったら外す。
+    pathPrefix: process.env.PATH_PREFIX || "/",
     dir: {
       input: "src",
       output: "_site",
