@@ -391,7 +391,7 @@ def parse_sns_drafts(cycle_log_path):
       - [list] 本文
     戻り値: [{"heading": ..., "drafts": {"hook": "...", ...}}, ...]
     """
-    if not os.path.exists(cycle_log_path):
+    if not cycle_log_path or not os.path.exists(cycle_log_path):  # 初回などサイクルログが無いとき
         return []
     with open(cycle_log_path, encoding="utf-8") as f:
         text = f.read()

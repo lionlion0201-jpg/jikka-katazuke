@@ -42,6 +42,13 @@ def site_url():
     return url + "/"
 
 
+def gsc_property():
+    """Search Console のプロパティ。このサイトはドメインプロパティ(sc-domain:)で登録しているため、
+    site.json の gscProperty を優先する。無ければ URL プレフィックス(site_url)を使う。"""
+    with open(os.path.join(ROOT, "src", "_data", "site.json"), encoding="utf-8") as f:
+        return json.load(f).get("gscProperty") or site_url()
+
+
 def get_service():
     key = os.environ.get("GA4_SA_KEY", "").strip()
     if not key:
@@ -83,7 +90,7 @@ def main():
     parser.add_argument("--no-inspect", action="store_true", help="URL検査(インデックス状態)を行わない")
     args = parser.parse_args()
 
-    prop = site_url()
+    prop = gsc_property()
     svc = get_service()
     today = datetime.now(JST).date()
     end = (today - timedelta(days=3)).isoformat()
@@ -121,7 +128,7 @@ def main():
         return
     index, errors = [], 0
     checked_at = datetime.now(JST).isoformat()
-    for url in sitemap_urls(prop):
+    for url in sitemap_urls(site_url()):
         try:
             res = svc.urlInspection().index().inspect(body={"inspectionUrl": url, "siteUrl": prop}).execute()
         except Exception as e:  # 1件の失敗で全体を止めない
