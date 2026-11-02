@@ -116,7 +116,7 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
-    // 独自ドメインを取るまでは GitHub Pages の標準アドレス(/jikka-katazuke-note/ の下)で公開する。
+    // 独自ドメインを取るまでは GitHub Pages の標準アドレス(/jikka-katazuke/ の下)で公開する。
     // deploy.yml で PATH_PREFIX を渡している。独自ドメインに移ったら外す。
     pathPrefix: process.env.PATH_PREFIX || "/",
     dir: {

@@ -40,10 +40,10 @@ jobs:
         run: |
           python -m pip install -r scripts/requirements-og.txt
           python scripts/generate_og_images.py
-      # 独自ドメインを取るまでは https://lionlion0201-jpg.github.io/jikka-katazuke-note/ で公開する
+      # 独自ドメインを取るまでは https://lionlion0201-jpg.github.io/jikka-katazuke/ で公開する
       - run: npx @11ty/eleventy
         env:
-          PATH_PREFIX: /jikka-katazuke-note/
+          PATH_PREFIX: /jikka-katazuke/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site

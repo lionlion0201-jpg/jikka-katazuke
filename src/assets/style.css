@@ -74,3 +74,23 @@ th{background:var(--accent-soft)}
 .category-more a{color:var(--accent)}
 /* 記事の見出し画像(scripts/generate_og_images.py で自動生成)。width/height 属性で縦横比を確保し、スマホ幅では縮小する */
 .post-eyecatch{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:1200/630;margin:.4rem 0 1.4rem;border-radius:12px;border:1px solid var(--border)}
+
+/* トップページ: 入口ボタン・状況から探す・方針(2026-11-02) */
+.hero-eyebrow{color:var(--accent);font-weight:700;font-size:.85rem;margin:0 0 .5rem}
+.hero-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.4rem}
+.hero-button{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;padding:.8rem 1.3rem;border-radius:10px;transition:opacity .15s}
+.hero-button:hover{opacity:.88}
+.hero-button-sub{background:var(--card);color:var(--accent);border:1px solid var(--accent)}
+.situations{margin:2rem 0 0}
+.situations h2,.policy h2,.list-title{font-size:1.05rem;margin:0 0 .8rem}
+.situation-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.7rem}
+.situation-grid a{display:flex;flex-direction:column;gap:.35rem;height:100%;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;text-decoration:none;color:var(--text);transition:border-color .15s,box-shadow .15s}
+.situation-grid a:hover{border-color:var(--accent);box-shadow:0 4px 14px rgba(34,48,42,.08)}
+.situation-q{font-weight:700;font-size:.93rem;line-height:1.55}
+.situation-a{color:var(--accent);font-size:.82rem}
+.situation-a::after{content:" →"}
+.policy{margin:2rem 0 0;background:var(--accent-soft);border-radius:12px;padding:1.2rem 1.3rem}
+.policy ul{margin:0;padding-left:1.1rem}
+.policy li{margin:.3rem 0;font-size:.9rem}
+.list-title{margin-top:2.2rem;border-left:4px solid var(--accent);padding-left:.7rem}
+.post-tag{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:.72rem;padding:.1rem .55rem;border-radius:999px;margin-right:.5rem}

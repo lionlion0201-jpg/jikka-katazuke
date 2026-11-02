@@ -36,7 +36,7 @@ DEST = os.path.join(ROOT, "docs", "review", "decisions.json")
 APPLIED = os.path.join(ROOT, "docs", "review", "applied.json")
 DOWNLOADS = os.path.expanduser("~/Downloads")
 ARCHIVE = os.path.join(DOWNLOADS, "レビュー決定", "JP")
-SITE = "実家の片付けノート (JIKKA)"
+SITE = "実家の片付け相談室 (JIKKA)"
 JST = timezone(timedelta(hours=9))
 TRAILER = "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
