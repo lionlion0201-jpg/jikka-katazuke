@@ -1,0 +1,42 @@
+{
+  "site_label": "実家の片付けノート (JIKKA)",
+  "lang": "ja",
+  "amazon_tag": "seniorpet-22",
+  "timezone_offset": "+09:00",
+  "publish_hour": "09:00:00",
+  "required_sections": [
+    "## 依頼する前に確認したいこと"
+  ],
+  "ng_patterns": [
+    "必ず[^。]{0,20}(ます|です)",
+    "絶対に",
+    "誰でも",
+    "業界最安",
+    "一番安い",
+    "節税になります",
+    "税金がかかりません",
+    "損しません"
+  ],
+  "seasonal_keywords": {
+    "お盆": [
+      7,
+      8
+    ],
+    "年末": [
+      11,
+      12
+    ],
+    "大掃除": [
+      11,
+      12
+    ],
+    "引っ越し": [
+      2,
+      3,
+      4
+    ]
+  },
+  "has_pins": false,
+  "tweet_queue": null,
+  "cta_strong_must_be_label": true
+}

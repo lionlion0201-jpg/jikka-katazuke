@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: 実家の片付け・遺品整理の段取りと業者の選び方
+description: 親の家・実家の片付けを、段取り・業者の選び方・費用の決まり方から整理します。
+permalink: /
+---
+<div class="hero">
+  <div class="hero-inner">
+    <h1>実家の片付けを、段取りから。</h1>
+    <p>{{ site.description }}</p>
+    <div class="hero-badges">
+      <span>片付けの段取り</span>
+      <span>業者の選び方・費用</span>
+      <span>出張買取</span>
+    </div>
+  </div>
+</div>
+
+<nav class="category-nav" aria-label="テーマから探す">
+  <h2>テーマから探す</h2>
+  <ul>
+  {% for cat in collections.categoryHubs %}
+    <li><a href="{{ ('/category/' + cat.slug + '/') | url }}">{{ cat.name }}<span class="count">{{ cat.posts.length }}</span></a></li>
+  {% endfor %}
+  </ul>
+</nav>
+
+<ul class="post-list">
+{% for post in collections.posts %}
+  <li class="post-card">
+    <span class="post-meta">{{ post.date | readableDate }}</span>
+    <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+    <p>{{ post.data.description }}</p>
+  </li>
+{% endfor %}
+</ul>
+
+<div class="trust-strip">
+  <span><strong>選び方の参考に</strong> 相続・税金など法律にかかわる判断は、公的な窓口や専門家にご確認ください</span>
+  <span><strong>広告表記</strong> 業者紹介サービス・Amazon等のアフィリエイト広告を含みます</span>
+</div>

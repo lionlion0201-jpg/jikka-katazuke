@@ -1,0 +1,76 @@
+:root{
+  --bg:#f6f8f6; --text:#22302a; --muted:#5c6b63; --accent:#3f7a5c; --accent-soft:#dcebe2; --card:#ffffff; --border:#d9e3dc;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hiragino Sans","Yu Gothic",-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.85;-webkit-font-smoothing:antialiased}
+
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.5rem;background:rgba(246,248,246,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.site-header-inner{max-width:840px;margin:0 auto;width:100%;display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:700;font-size:1.2rem;color:var(--accent);text-decoration:none;letter-spacing:.02em}
+.site-header nav a{margin-left:1.4rem;color:var(--text);text-decoration:none;font-size:.88rem;transition:color .15s}
+.site-header nav a:hover{color:var(--accent)}
+
+.hero{background:linear-gradient(135deg,var(--accent-soft),var(--bg) 70%);border-bottom:1px solid var(--border)}
+.hero-inner{max-width:720px;margin:0 auto;padding:3.2rem 1.5rem 2.6rem}
+.hero h1{font-size:1.9rem;line-height:1.5;margin:0 0 .8rem}
+.hero p{color:var(--muted);font-size:1rem;max-width:34rem;margin:0}
+.hero-badges{display:flex;gap:.6rem;margin-top:1.3rem;flex-wrap:wrap}
+.hero-badges span{background:var(--card);border:1px solid var(--border);color:var(--muted);font-size:.78rem;padding:.35rem .7rem;border-radius:999px}
+
+main{max-width:720px;margin:0 auto;padding:2.2rem 1.5rem 3rem}
+h1{font-size:1.7rem;line-height:1.5}
+h2{font-size:1.2rem;margin-top:2.4rem;padding-left:.7rem;border-left:4px solid var(--accent)}
+h3{font-size:1.02rem;margin-top:1.6rem}
+a{color:var(--accent)}
+p{margin:0 0 1.1rem}
+
+.post-list{list-style:none;padding:0;margin:1.8rem 0 0;display:grid;gap:1.1rem}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.5rem;transition:box-shadow .15s,transform .15s}
+.post-card:hover{box-shadow:0 6px 20px rgba(43,36,32,.08);transform:translateY(-1px)}
+.post-card h2{border-left:none;padding-left:0;margin-top:0;font-size:1.08rem}
+.post-card h2 a{text-decoration:none;color:var(--text)}
+.post-card h2 a:hover{color:var(--accent)}
+.post-card p{margin-bottom:0;color:var(--muted);font-size:.92rem}
+.post-meta{color:var(--muted);font-size:.82rem;display:block;margin-bottom:.4rem}
+
+.trust-strip{display:flex;gap:1.2rem;flex-wrap:wrap;margin:2rem 0 0;padding:1.1rem 1.3rem;background:var(--card);border:1px solid var(--border);border-radius:12px;font-size:.85rem;color:var(--muted)}
+.trust-strip strong{color:var(--text)}
+
+.affiliate-note{background:#fff4e8;border:1px solid #eccba0;padding:.9rem 1.1rem;border-radius:10px;font-size:.88rem;margin:1.5rem 0}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;border-radius:8px;overflow:hidden}
+th,td{border:1px solid var(--border);padding:.65rem .7rem;text-align:left;font-size:.9rem}
+th{background:var(--accent-soft)}
+
+.site-footer{margin:3.5rem auto 0;padding:2rem 1.5rem;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);background:var(--card)}
+.site-footer a{color:var(--muted)}
+
+.cta-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.4rem;margin:1.6rem 0}
+.cta-box strong{color:var(--text)}
+.cta-box a.button{display:inline-block;background:var(--accent);color:#fff;padding:.65rem 1.2rem;border-radius:8px;text-decoration:none;margin-top:.6rem;font-size:.92rem;transition:opacity .15s}
+.cta-box a.button:hover{opacity:.85}
+.cta-box a.button-rakuten{background:#bf0000}
+.campaign-note{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:8px;padding:1rem 1.2rem;margin:1.6rem 0;font-size:.92rem;line-height:1.75}
+.campaign-note .campaign-note-head{font-weight:700;display:block;margin-bottom:.35rem}
+.campaign-note .campaign-note-meta{display:block;margin-top:.5rem;opacity:.75;font-size:.85rem}
+.related-posts{margin:2.4rem 0 1rem;padding-top:1.4rem;border-top:1px solid var(--border)}
+.related-posts h2{font-size:1.05rem;margin-bottom:.6rem}
+.related-posts ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem}
+.related-posts a{color:var(--accent);text-decoration:none}
+.related-posts a:hover{text-decoration:underline}
+
+/* テーマ(カテゴリ)別まとめページ・パンくず */
+.breadcrumb{font-size:.8rem;color:var(--muted);margin:0 0 .8rem}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--accent);text-decoration:underline}
+.breadcrumb span{margin:0 .3rem}
+.category-nav{margin:1.6rem 0 1.2rem}
+.category-nav h2{font-size:1rem;margin:0 0 .6rem}
+.category-nav ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.category-nav a{display:inline-block;background:var(--card);border:1px solid var(--border);color:var(--text);font-size:.82rem;padding:.35rem .8rem;border-radius:999px;text-decoration:none}
+.category-nav a:hover{border-color:var(--accent);color:var(--accent)}
+.category-nav .count{color:var(--muted);font-size:.72rem;margin-left:.35rem}
+.category-intro{color:var(--muted);margin:0 0 1.4rem}
+.category-more{margin:.9rem 0 0;font-size:.88rem}
+.category-more a{color:var(--accent)}
+/* 記事の見出し画像(scripts/generate_og_images.py で自動生成)。width/height 属性で縦横比を確保し、スマホ幅では縮小する */
+.post-eyecatch{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:1200/630;margin:.4rem 0 1.4rem;border-radius:12px;border:1px solid var(--border)}

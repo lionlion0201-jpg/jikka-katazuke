@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }} | {{ site.name }}</title>
+<meta name="description" content="{{ description or site.description }}">
+<link rel="canonical" href="{{ site.domain }}{{ page.url | url }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:url" content="{{ site.domain }}{{ page.url | url }}">
+<meta property="og:locale" content="ja_JP">
+{% set ogImg = page.fileSlug | ogImage %}
+{% if ogImg %}
+<meta property="og:image" content="{{ site.domain }}{{ ogImg }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ title }}">
+<meta name="twitter:image" content="{{ site.domain }}{{ ogImg }}">
+<meta name="twitter:card" content="summary_large_image">
+{% endif %}
+<link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
+{% if site.googleSiteVerification %}<meta name="google-site-verification" content="{{ site.googleSiteVerification }}">{% endif %}
+{% if site.gaId %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gaId }}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '{{ site.gaId }}');
+
+// アフィリエイトリンクのクリックを計測する。
+// 売上までの経路(表示→流入→リンククリック→注文)のうち、実際に取得できる
+// 範囲で最も売上に近いのがこのクリック。ここが空白だと、投稿や記事の良し悪しを
+// インプレッションだけで判断することになり、「読まれるが買われない」型が勝って
+// しまう。設計の背景は アフィリエイト/共通/計測設計.md を参照。
+//
+// 対象は rel に sponsored を含むリンクのみ。アフィリエイトリンクには例外なく
+// rel="nofollow sponsored" を付ける運用なので、記事間の内部リンクや参考リンクを
+// 誤って拾うことがない。
+(function () {
+  document.addEventListener('click', function (e) {
+    var el = e.target;
+    if (!el || !el.closest) return;
+    var a = el.closest('a[rel~="sponsored"]');
+    if (!a || typeof gtag !== 'function') return;
+
+    var box = a.closest('.cta-box');
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('.cta-box'));
+    var strong = box ? box.querySelector('strong') : null;
+    var host = '';
+    try { host = new URL(a.href).hostname.replace(/^www\./, ''); } catch (err) {}
+
+    // リンク先の「何を探しに行ったか」を読める形で残す。
+    // Amazonの検索URLは日本語がパーセントエンコードされて長大になり、
+    // 100文字で切ると壊れた文字列になってしまうため、検索キーワード(k)を
+    // デコードして使う。キーワードが無ければホスト+パスで代用する。
+    var target = '';
+    try {
+      var u = new URL(a.href);
+      // もしもアフィリエイトのリンクは、本当の行き先が url パラメータに入っている。
+      // 楽天市場ボタン(lib/rakuten.js)の場合は、行き先のホストと検索語を取り出す。
+      if (u.hostname === 'af.moshimo.com' && u.searchParams.get('url')) {
+        u = new URL(u.searchParams.get('url'));
+        host = u.hostname.replace(/^www\./, '');
+        var m = u.pathname.match(/\/search\/mall\/([^\/]+)/);
+        if (m) target = decodeURIComponent(m[1]).replace(/\+/g, ' ');
+      }
+      target = target || u.searchParams.get('k') || (u.hostname.replace(/^www\./, '') + u.pathname);
+    } catch (err) { target = a.href; }
+
+    var params = {
+      article: location.pathname.slice(0, 100),
+      link_domain: host.slice(0, 100),
+      link_text: (a.textContent || '').trim().slice(0, 100),
+      // 記事内で何番目のCTAか。本文を読み進めた先のCTAほど購買意向が高い、
+      // といった仮説を後から検証できるようにしている。
+      position: box ? boxes.indexOf(box) + 1 : 0,
+      link_target: target.slice(0, 100)
+    };
+    // CTAボックス内の <strong> は、US記事では商品名だが、JP記事では
+    // 「選び方の目安:」のような見出しラベルになっている。末尾がコロンの
+    // ものはラベルとみなして商品名として扱わない。
+    if (strong) {
+      var st = (strong.textContent || '').trim();
+      if (st && !/[:：]$/.test(st)) params.product = st.slice(0, 100);
+    }
+
+    gtag('event', 'affiliate_click', params);
+  }, true);
+})();
+</script>
+{% endif %}
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="{{ '/' | url }}">{{ site.name }}</a>
+    <nav>
+      <a href="{{ '/' | url }}">ホーム</a>
+      <a href="{{ '/about/' | url }}">運営者情報</a>
+      <a href="{{ '/affiliate-disclosure/' | url }}">広告について</a>
+    </nav>
+  </div>
+</header>
+<main>
+{{ content | safe }}
+</main>
+<footer class="site-footer">
+  <p>&copy; {{ currentYear }} {{ site.name }}</p>
+  <p><a href="{{ '/affiliate-disclosure/' | url }}">広告表記</a> ・ <a href="{{ '/privacy-policy/' | url }}">プライバシーポリシー</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,67 @@
+name: Fetch Metrics
+
+# GA4(アフィリエイトリンクのクリック)と Search Console の数字を毎日取得してコミットする。
+# JP サイト(senior-pet-blog)の仕組みを転用。X は使わないので取得しない。
+
+on:
+  schedule:
+    # 毎日 22:00 JST (13:00 UTC)
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "fetch-metrics"
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r scripts/requirements.txt
+
+      # アフィリエイトリンクのクリック(affiliate_click)とセッション
+      - name: Fetch GA4 clicks
+        id: fetch_ga4
+        continue-on-error: true
+        env:
+          GA4_SA_KEY: ${{ secrets.GA4_SA_KEY }}
+          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+        run: python3 scripts/fetch_ga4.py --days 30
+
+      # 検索の表示回数・クリック・順位・検索語・インデックス状態(2026-10-16 SEO に集中する方針で追加)
+      - name: Fetch Search Console
+        id: fetch_gsc
+        continue-on-error: true
+        env:
+          GA4_SA_KEY: ${{ secrets.GA4_SA_KEY }}
+        run: python3 scripts/fetch_gsc.py --days 28
+
+      - name: Commit engagement log
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for f in docs/metrics/ga4_clicks.json docs/metrics/ga4_products.json docs/metrics/gsc_pages.json docs/metrics/gsc_queries.json docs/metrics/gsc_index.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update metrics [skip ci]"
+            git pull --rebase --autostash
+            git push
+          else
+            echo "No metric changes to commit."
+          fi
+
+      - name: Report fetch failures
+        if: steps.fetch_ga4.outcome == 'failure' || steps.fetch_gsc.outcome == 'failure'
+        run: |
+          echo "GA4: ${{ steps.fetch_ga4.outcome }} / Search Console: ${{ steps.fetch_gsc.outcome }}"
+          echo "Search Console が failure なら、Google Cloud で Search Console API が有効か、サービスアカウントが各プロパティのユーザーに入っているかを確認。"
+          echo "GA4 が failure なら GA4_SA_KEY / GA4_PROPERTY_ID の登録と、サービスアカウントがプロパティの閲覧者になっているかを確認。"
+          exit 1
