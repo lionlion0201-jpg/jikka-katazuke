@@ -80,7 +80,9 @@ def save(name, data):
 
 
 def sitemap_urls(prop):
-    with urllib.request.urlopen(prop + "sitemap.xml", timeout=30) as r:
+    # Cloudflare が Python 既定の User-Agent を 403 で弾くため、名乗りを付ける
+    req = urllib.request.Request(prop + "sitemap.xml", headers={"User-Agent": "Mozilla/5.0 (compatible; jikka-metrics/1.0)"})
+    with urllib.request.urlopen(req, timeout=30) as r:
         return re.findall(r"<loc>([^<]+)</loc>", r.read().decode("utf-8"))
 
 
