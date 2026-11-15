@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "page": "http://jikka-katazuke.net/",
+    "clicks": 0,
+    "impressions": 3,
+    "position": 2,
+    "period_start": "2026-10-16",
+    "period_end": "2026-11-13"
+  },
+  {
+    "page": "https://jikka-katazuke.net/",
+    "clicks": 0,
+    "impressions": 3,
+    "position": 1,
+    "period_start": "2026-10-16",
+    "period_end": "2026-11-13"
+  }
+]
