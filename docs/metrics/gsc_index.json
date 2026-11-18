@@ -3,17 +3,17 @@
     "url": "https://jikka-katazuke.net/",
     "verdict": "PASS",
     "coverage": "Submitted and indexed",
-    "last_crawl": "2026-11-05T23:49:30Z",
+    "last_crawl": "2026-11-08T11:26:13Z",
     "google_canonical": "https://jikka-katazuke.net/",
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/about/",
     "verdict": "NEUTRAL",
-    "coverage": "Discovered - currently not indexed",
+    "coverage": "URL is unknown to Google",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/affiliate-disclosure/",
@@ -21,7 +21,7 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/privacy-policy/",
@@ -29,7 +29,7 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/category/dandori/",
@@ -37,15 +37,15 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/category/gyousha/",
     "verdict": "NEUTRAL",
-    "coverage": "Discovered - currently not indexed",
+    "coverage": "URL is unknown to Google",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/category/kaitori/",
@@ -53,15 +53,15 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/category/hokan/",
     "verdict": "NEUTRAL",
-    "coverage": "Discovered - currently not indexed",
+    "coverage": "URL is unknown to Google",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/category/sonogo/",
@@ -69,7 +69,15 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
+  },
+  {
+    "url": "https://jikka-katazuke.net/posts/ihin-shashin-album-seiri/",
+    "verdict": "NEUTRAL",
+    "coverage": "URL is unknown to Google",
+    "last_crawl": null,
+    "google_canonical": null,
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/jikka-kimono-shobun/",
@@ -77,7 +85,7 @@
     "coverage": "URL is unknown to Google",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/jikka-katazuke-kyoudai-buntan/",
@@ -85,7 +93,7 @@
     "coverage": "URL is unknown to Google",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/jikka-butsudan-shobun/",
@@ -93,7 +101,7 @@
     "coverage": "URL is unknown to Google",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/enpou-jikka-katazuke/",
@@ -101,15 +109,15 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/fuyouhin-kaishuu-ihin-seiri-chigai/",
     "verdict": "NEUTRAL",
-    "coverage": "URL is unknown to Google",
+    "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/ihin-seiri-gyousha-erabikata/",
@@ -117,7 +125,7 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/ihin-seiri-hiyou-kimarikata/",
@@ -125,7 +133,7 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/ikkatsu-mitsumori-tsukaikata/",
@@ -133,7 +141,7 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/jikka-katazuke-nanikara/",
@@ -141,23 +149,23 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/jikka-katazuke-ureru-mono/",
     "verdict": "NEUTRAL",
-    "coverage": "Discovered - currently not indexed",
+    "coverage": "URL is unknown to Google",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/katami-hokan-trunk-room/",
     "verdict": "NEUTRAL",
-    "coverage": "Discovered - currently not indexed",
+    "coverage": "URL is unknown to Google",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/katazuketa-jikka-dousuru/",
@@ -165,14 +173,14 @@
     "coverage": "Discovered - currently not indexed",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   },
   {
     "url": "https://jikka-katazuke.net/posts/seizen-seiri-oya-kirikata/",
     "verdict": "NEUTRAL",
-    "coverage": "Discovered - currently not indexed",
+    "coverage": "URL is unknown to Google",
     "last_crawl": null,
     "google_canonical": null,
-    "checked_at": "2026-11-18T06:27:34.417611+09:00"
+    "checked_at": "2026-11-19T05:59:57.983930+09:00"
   }
 ]
